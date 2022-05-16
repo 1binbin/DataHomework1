@@ -23,6 +23,9 @@ public class BinaryTreeDemoTest {
         BinaryTree<String> stringBinaryTree1 = new BinaryTree<>(preList, inList);
         BinaryTree<String> stringBinaryTree2 = new BinaryTree<>(preList, inList);
         BinaryTree<String> stringBinaryTree3 = new BinaryTree<>(preList, inList);
+//        验证性质3
+        System.out.println("验证二叉树性质3");
+        BinaryTreeDemo.property3(stringBinaryTree1);
 //        交换前遍历
         System.out.println("交换左右子树前的后序遍历");
         stringBinaryTree1.postOrder(stringBinaryTree1.getRoot());
