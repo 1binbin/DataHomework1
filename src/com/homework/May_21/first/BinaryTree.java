@@ -65,7 +65,7 @@ public class BinaryTree<T extends Comparable<T>> {
      */
     public int printPath(BinaryNode<T> node) {
         if (root != null) {
-            printPath(root,node);
+            printPath(root, node);
             System.out.println(stack);
             return stack.size();
         }
@@ -128,6 +128,7 @@ public class BinaryTree<T extends Comparable<T>> {
 
 
     /**
+     * （6-1）1
      * 查找并删除首个以与key相等元素为结点为根的子树
      *
      * @Param: T key 要删除结点的值
@@ -155,34 +156,7 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
-     * 返回某结点的父母结点
-     *
-     * @Param: BinaryNode<T> p 需要找到其父母结点的子节点
-     * @Return: BinaryNode<T> 其父母结点
-     */
-    public BinaryNode<T> parent(BinaryNode<T> p) {
-        if (root != null) {
-            return parent(root, p);
-        }
-        return null;
-    }
-
-    public BinaryNode<T> parent(BinaryNode<T> root, BinaryNode<T> p) {
-        if (root == null || root.getLeft() == p || root.getRight() == p) {
-            return root;
-        }
-        BinaryNode<T> left = parent(root.getLeft(), p);
-        if (left != null) {
-            return left;
-        }
-        BinaryNode<T> right = parent(root.getRight(), p);
-        if (right != null) {
-            return right;
-        }
-        return null;
-    }
-
-    /**
+     * （6-1）2
      * 判断是否为二叉排序树
      *
      * @Param:
@@ -214,6 +188,36 @@ public class BinaryTree<T extends Comparable<T>> {
         isSorted(root.getRight());
         return s;
     }
+
+    /**
+     * （6-1）3
+     * 返回某结点的父母结点
+     *
+     * @Param: BinaryNode<T> p 需要找到其父母结点的子节点
+     * @Return: BinaryNode<T> 其父母结点
+     */
+    public BinaryNode<T> parent(BinaryNode<T> p) {
+        if (root != null) {
+            return parent(root, p);
+        }
+        return null;
+    }
+
+    public BinaryNode<T> parent(BinaryNode<T> root, BinaryNode<T> p) {
+        if (root == null || root.getLeft() == p || root.getRight() == p) {
+            return root;
+        }
+        BinaryNode<T> left = parent(root.getLeft(), p);
+        if (left != null) {
+            return left;
+        }
+        BinaryNode<T> right = parent(root.getRight(), p);
+        if (right != null) {
+            return right;
+        }
+        return null;
+    }
+
 
     /**
      * 查找指定结点
