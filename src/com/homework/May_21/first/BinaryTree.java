@@ -93,6 +93,7 @@ public class BinaryTree<T extends Comparable<T>> {
             return true;
         }
 //        如果其左右子节点都找不到就出栈，表示找到尽头了找不到，故此结点不会是路径中的一点
+//        往回走的时候，其左右结点都是false，故将其出栈
         stack.pop();
         return false;
     }
