@@ -77,7 +77,7 @@ public class BinaryTree<T extends Comparable<T>> {
 
     Stack<BinaryNode<T>> stack = new Stack<>();
 
-    public boolean printPath(BinaryNode<T> root, BinaryNode<T> node) {
+    private boolean printPath(BinaryNode<T> root, BinaryNode<T> node) {
         if (root == null) {
             return false;
         }
@@ -138,7 +138,10 @@ public class BinaryTree<T extends Comparable<T>> {
      * @Return: BinaryNode<T> 需要删除的结点
      */
     public BinaryNode<T> remove(T key) {
-        return remove(root, key);
+        if (this.getRoot() == null) {
+            throw new RuntimeException("该二叉树为空");
+        }
+        return remove(this.getRoot(), key);
     }
 
     public BinaryNode<T> remove(BinaryNode<T> node, T key) {
@@ -166,10 +169,10 @@ public class BinaryTree<T extends Comparable<T>> {
      * @Return: true 是二叉排序树 反之不是
      */
     public boolean isSorted() {
-        if (root != null) {
-            return isSorted(root);
+        if (this.getRoot() == null) {
+            throw new RuntimeException("该二叉树为空");
         }
-        return false;
+        return isSorted(this.getRoot());
     }
 
     public boolean isSorted(BinaryNode<T> root) {
@@ -200,10 +203,10 @@ public class BinaryTree<T extends Comparable<T>> {
      * @Return: BinaryNode<T> 其父母结点
      */
     public BinaryNode<T> parent(BinaryNode<T> p) {
-        if (root != null) {
-            return parent(root, p);
+        if (this.getRoot() == null) {
+            throw new RuntimeException("该二叉树为空");
         }
-        return null;
+        return parent(this.getRoot(), p);
     }
 
     public BinaryNode<T> parent(BinaryNode<T> root, BinaryNode<T> p) {
@@ -221,18 +224,17 @@ public class BinaryTree<T extends Comparable<T>> {
         return null;
     }
 
-
     /**
-     * 查找指定结点
+     * 查找指定结点，便于测试
      *
      * @Param: T data 指定值
      * @Return: 指定结点
      */
     public BinaryNode<T> getNode(T data) {
-        if (root != null) {
-            return getNode(root, data);
+        if (this.getRoot() == null) {
+            throw new RuntimeException("该二叉树为空");
         }
-        return null;
+        return getNode(this.getRoot(), data);
     }
 
     public BinaryNode<T> getNode(BinaryNode<T> root, T data) {

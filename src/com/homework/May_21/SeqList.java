@@ -1,5 +1,9 @@
 package com.homework.May_21;
 
+/**
+ * @author hongxiaobin
+ */
+@SuppressWarnings("ALL")
 public class SeqList<T extends Comparable<T>> implements SeqLinearList<T> { // 线性表的顺序存储实现（顺序表）
     private static final int MIN_CAPACITY = 16; // 定义顺序存储空间的最小容量
     protected Object[] element; // 地址连续的顺序存储空间，Object数组提供
