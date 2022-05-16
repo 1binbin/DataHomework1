@@ -66,7 +66,10 @@ public class BinaryTreeDemo {
             BinaryNode<T> temp = node.getLeft();
             node.setLeft(node.getRight());
             node.setRight(temp);
-            swapTreeIn(node.getRight());
+//            当左子树交换完之后，再让根节点交换，原来交换完的左子树变到右边
+//            如果此时再进行右子树交换，相当与把原来交换完的左子树再交换一遍，而原来没有交换的右子树到左边后没有进行交换
+//            故再进行一次左子树交换，实现让原来的右子树交换且原来的左子树不会再交换一次
+            swapTreeIn(node.getLeft());
         }
     }
 
