@@ -1,4 +1,4 @@
-package com.homework.May_21.first;
+package com.homework.May_21;
 
 public class SeqList<T extends Comparable<T>> implements SeqLinearList<T> { // 线性表的顺序存储实现（顺序表）
     private static final int MIN_CAPACITY = 16; // 定义顺序存储空间的最小容量

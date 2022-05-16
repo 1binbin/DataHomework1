@@ -1,5 +1,8 @@
 package com.homework.May_21.first;
 
+import com.homework.May_21.BinaryNode;
+import com.homework.May_21.SeqList;
+
 /**
  * 二叉树测试类
  *
