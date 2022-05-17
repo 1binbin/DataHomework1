@@ -143,6 +143,11 @@ public class BinaryTree<T extends Comparable<T>> {
         if (this.getRoot() == null) {
             throw new RuntimeException("该二叉树为空");
         }
+        if (this.getRoot().getData().equals(key)){
+            BinaryNode<T> temp = this.getRoot();
+            this.setRoot(null);
+            return temp;
+        }
         return remove(this.getRoot(), key);
     }
 
