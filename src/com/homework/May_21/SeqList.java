@@ -48,9 +48,9 @@ public class SeqList<T extends Comparable<T>> implements SeqLinearList<T> { // ç
         if (i < 0 || i >= n) {
             throw new IndexOutOfBoundsException(i + "");
         }
-        if (x == null) {
+     /*   if (x == null) {
             throw new NullPointerException("x == null");
-        }
+        }*/
         this.element[i] = x;
     }
 

@@ -45,8 +45,8 @@ public class BinaryTreeTest {
         BinaryNode<String> g = stringBinaryTree.getNode("g");
         System.out.println(stringBinaryTree.parent(g));
 //        删除某个结点为根节点的子树
-        System.out.println("删除以值为 e 结点为根节点的子树");
-        stringBinaryTree.remove("e");
+        System.out.println("删除以值为 b 结点为根节点的子树");
+        stringBinaryTree.remove("b");
         stringBinaryTree.preOrder(stringBinaryTree.getRoot());
         System.out.println();
 //        判断是否为二叉排序树

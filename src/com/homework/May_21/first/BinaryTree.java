@@ -119,6 +119,8 @@ public class BinaryTree<T extends Comparable<T>> {
             BinaryNode<T> node = new BinaryNode<>(r);
 //            在中序中找到根节点的位置，划分为左子树和右子树
             int index = inList.search(r);
+//            这个元素找完之后设置为空，防止后续在中序中查找到与它相同的元素，导致index出错
+            inList.set(index,null);
             int ll = index - inStart;
             int rl = inEnd - index;
             node.setLeft(buildBitree(preList, preStart + 1, preStart + ll, inList, inStart, index - 1));
@@ -150,15 +152,17 @@ public class BinaryTree<T extends Comparable<T>> {
             if (node.getRight() != null && node.getRight().getData().equals(key)) {
                 temp = node.getRight();
                 node.setRight(null);
+                return temp;
             }
             if (node.getLeft() != null && node.getLeft().getData().equals(key)) {
                 temp = node.getLeft();
                 node.setLeft(null);
+                return temp;
             }
             remove(node.getLeft(), key);
             remove(node.getRight(), key);
         }
-        return temp;
+        return null;
     }
 
     /**
