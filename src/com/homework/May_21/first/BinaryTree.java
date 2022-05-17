@@ -151,23 +151,27 @@ public class BinaryTree<T extends Comparable<T>> {
         return remove(this.getRoot(), key);
     }
 
+    private static boolean is;
+    private BinaryNode<T> temp;
     public BinaryNode<T> remove(BinaryNode<T> node, T key) {
-        BinaryNode<T> temp;
         if (node != null) {
+            if (is){
+                return node;
+            }
             if (node.getLeft() != null && node.getLeft().getData().equals(key)) {
                 temp = node.getLeft();
                 node.setLeft(null);
-                return temp;
+                is =  true;
             }
             if (node.getRight() != null && node.getRight().getData().equals(key)) {
                 temp = node.getRight();
                 node.setRight(null);
-                return temp;
+                is = true;
             }
             remove(node.getLeft(), key);
             remove(node.getRight(), key);
         }
-        return null;
+        return temp;
     }
 
     /**
