@@ -49,6 +49,9 @@ public class BinaryTreeTest {
         stringBinaryTree.remove("e");
         stringBinaryTree.preOrder(stringBinaryTree.getRoot());
         System.out.println();
+        stringBinaryTree.remove("b");
+        stringBinaryTree.preOrder(stringBinaryTree.getRoot());
+        System.out.println();
 //        判断是否为二叉排序树
         SeqList<Integer> preList1 = new SeqList<>();
         SeqList<Integer> inList1 = new SeqList<>();

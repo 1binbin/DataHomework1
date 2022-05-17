@@ -143,16 +143,20 @@ public class BinaryTree<T extends Comparable<T>> {
         if (this.getRoot() == null) {
             throw new RuntimeException("该二叉树为空");
         }
+        BinaryNode<T> temp;
         if (this.getRoot().getData().equals(key)){
-            BinaryNode<T> temp = this.getRoot();
+            temp = this.getRoot();
             this.setRoot(null);
             return temp;
+        }else {
+            temp = getNode(key);
+            temp.setLeft(null);
+            temp.setRight(null);
         }
-        return remove(this.getRoot(), key);
+        return temp;
     }
-
+    /*private BinaryNode<T> temp;
     private static boolean is;
-    private BinaryNode<T> temp;
     public BinaryNode<T> remove(BinaryNode<T> node, T key) {
         if (node != null) {
             if (is){
@@ -172,7 +176,7 @@ public class BinaryTree<T extends Comparable<T>> {
             remove(node.getRight(), key);
         }
         return temp;
-    }
+    }*/
 
     /**
      * （6-1）2
@@ -251,20 +255,22 @@ public class BinaryTree<T extends Comparable<T>> {
         return getNode(this.getRoot(), data);
     }
 
-    public BinaryNode<T> getNode(BinaryNode<T> root, T data) {
+    public BinaryNode<T> getNode(BinaryNode<T> node, T data) {
         BinaryNode<T> temp = null;
-        if (root.getData().equals(data)) {
-            return root;
+        if (node.getData().equals(data)) {
+            return node;
         }
-        if (root.getLeft() != null) {
-            temp = getNode(root.getLeft(), data);
+        if (node.getLeft() != null) {
+            temp = getNode(node.getLeft(), data);
         }
         if (temp != null) {
+//            左子树递归进去之后如果找到了将返回目标结点并赋值给temp，如果temp不为空，直接返回
             return temp;
         }
-        if (root.getRight() != null) {
-            temp = getNode(root.getRight(), data);
+        if (node.getRight() != null) {
+            temp = getNode(node.getRight(), data);
         }
+//        返回递归查询到的结果temp
         return temp;
     }
 
