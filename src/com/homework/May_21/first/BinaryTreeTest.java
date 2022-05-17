@@ -48,7 +48,7 @@ public class BinaryTreeTest {
         System.out.println("删除以值为 e 结点为根节点的子树");
         stringBinaryTree.remove("e");
         stringBinaryTree.preOrder(stringBinaryTree.getRoot());
-        System.out.println();
+        System.out.println("删除以值为 b 结点为根结点的子树");
         stringBinaryTree.remove("b");
         stringBinaryTree.preOrder(stringBinaryTree.getRoot());
         System.out.println();
