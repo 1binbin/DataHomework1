@@ -52,8 +52,8 @@ public class BinaryTreeTest {
 //        判断是否为二叉排序树
         SeqList<Integer> preList1 = new SeqList<>();
         SeqList<Integer> inList1 = new SeqList<>();
-        int[] pre = {7,3,1,2,5,10,9,12};
-        int[] in = {1,2,3,5,7,9,10,12};
+        int[] pre = {7,3,1,5,10,9,8};
+        int[] in = {1,3,5,7,9,10,8};
         for (int i = 0; i < pre.length; i++) {
             preList1.insert(pre[i]);
             inList1.insert(in[i]);

@@ -178,9 +178,8 @@ public class BinaryTree<T extends Comparable<T>> {
         }
         return isSorted(this.getRoot());
     }
-
+    private static boolean s;
     public boolean isSorted(BinaryNode<T> root) {
-        boolean s = true;
         if (root == null) {
             return true;
         }
