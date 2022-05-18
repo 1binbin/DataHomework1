@@ -13,16 +13,20 @@ public class BinaryTreeDemoTest {
     public static void main(String[] args) {
 //        创建一棵二叉树
         SeqList<String> preList = new SeqList<>();
-        SeqList<String> inList = new SeqList<>();
+        SeqList<String> inList1 = new SeqList<>();
+        SeqList<String> inList2 = new SeqList<>();
+        SeqList<String> inList3 = new SeqList<>();
         String preStr = "abdefgc";
         String inStr = "dbfegac";
         for (int i = 0; i < preStr.length(); i++) {
             preList.insert(String.valueOf(preStr.charAt(i)));
-            inList.insert(String.valueOf(inStr.charAt(i)));
+            inList1.insert(String.valueOf(inStr.charAt(i)));
+            inList2.insert(String.valueOf(inStr.charAt(i)));
+            inList3.insert(String.valueOf(inStr.charAt(i)));
         }
-        BinaryTree<String> stringBinaryTree1 = new BinaryTree<>(preList, inList);
-        BinaryTree<String> stringBinaryTree2 = new BinaryTree<>(preList, inList);
-        BinaryTree<String> stringBinaryTree3 = new BinaryTree<>(preList, inList);
+        BinaryTree<String> stringBinaryTree1 = new BinaryTree<>(preList, inList1);
+        BinaryTree<String> stringBinaryTree2 = new BinaryTree<>(preList, inList2);
+        BinaryTree<String> stringBinaryTree3 = new BinaryTree<>(preList, inList3);
 //        验证性质3
         System.out.println("验证二叉树性质3");
         BinaryTreeDemo.property3(stringBinaryTree1);
