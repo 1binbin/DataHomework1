@@ -143,40 +143,50 @@ public class BinaryTree<T extends Comparable<T>> {
         if (this.getRoot() == null) {
             throw new RuntimeException("该二叉树为空");
         }
+        return remove(this.getRoot(), key);
+    }
+
+    public BinaryNode<T> remove(BinaryNode<T> node, T key) {
         BinaryNode<T> temp;
-        if (this.getRoot().getData().equals(key)){
+//        如果删除的是根节点
+        if (this.getRoot().getData().equals(key)) {
             temp = this.getRoot();
             this.setRoot(null);
             return temp;
-        }else {
-            temp = getNode(key);
-            temp.setLeft(null);
-            temp.setRight(null);
+        }
+//        判断根节点的左子节点
+        if (node.getLeft().getData().equals(key)) {
+            temp = node.getLeft();
+            node.setLeft(null);
+            return temp;
+        }
+//        判断根节点的右子节点
+        if (node.getRight().getData().equals(key)) {
+            temp = node.getRight();
+            node.setRight(null);
+            return temp;
+        }
+//        如果左子树找到了，直接判断其左右子节点是否为目标节点，删除并返回
+        temp = remove(node.getLeft(), key);
+        if (temp != null) {
+            if (temp.getLeft() != null) {
+                temp.setLeft(null);
+            } else {
+                temp.setRight(null);
+            }
+            return temp;
+        }
+//        如果右子树找到了
+        temp = remove(node.getRight(), key);
+        if (temp != null) {
+            if (temp.getLeft() != null) {
+                temp.setLeft(null);
+            } else {
+                temp.setRight(null);
+            }
         }
         return temp;
     }
-    /*private BinaryNode<T> temp;
-    private static boolean is;
-    public BinaryNode<T> remove(BinaryNode<T> node, T key) {
-        if (node != null) {
-            if (is){
-                return node;
-            }
-            if (node.getLeft() != null && node.getLeft().getData().equals(key)) {
-                temp = node.getLeft();
-                node.setLeft(null);
-                is =  true;
-            }
-            if (node.getRight() != null && node.getRight().getData().equals(key)) {
-                temp = node.getRight();
-                node.setRight(null);
-                is = true;
-            }
-            remove(node.getLeft(), key);
-            remove(node.getRight(), key);
-        }
-        return temp;
-    }*/
 
     /**
      * （6-1）2
