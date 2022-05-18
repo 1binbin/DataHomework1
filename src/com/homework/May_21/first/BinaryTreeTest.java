@@ -53,6 +53,8 @@ public class BinaryTreeTest {
         System.out.println(stringBinaryTree.remove("b"));
         stringBinaryTree.preOrder(stringBinaryTree.getRoot());
         System.out.println();
+        System.out.println("获取值为 g 的结点");
+        System.out.println(stringBinaryTree.getNode("g"));
 //        判断是否为二叉排序树
         SeqList<Integer> preList1 = new SeqList<>();
         SeqList<Integer> inList1 = new SeqList<>();
