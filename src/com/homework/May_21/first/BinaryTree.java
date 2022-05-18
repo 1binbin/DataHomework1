@@ -250,6 +250,10 @@ public class BinaryTree<T extends Comparable<T>> {
         if (this.getRoot() == null) {
             throw new RuntimeException("该二叉树为空");
         }
+        if (p == this.getRoot()){
+            System.out.println("该节点为根节点，不存在父节点");
+            return this.getRoot();
+        }
         return parent(this.getRoot(), p);
     }
 
