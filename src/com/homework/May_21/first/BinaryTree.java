@@ -166,25 +166,13 @@ public class BinaryTree<T extends Comparable<T>> {
             node.setRight(null);
             return temp;
         }
-//        如果左子树找到了，直接判断其左右子节点是否为目标节点，删除并返回
+//        如果左子树找到了，删除并返回
         temp = remove(node.getLeft(), key);
         if (temp != null) {
-            if (temp.getLeft() != null) {
-                temp.setLeft(null);
-            } else {
-                temp.setRight(null);
-            }
             return temp;
         }
 //        如果右子树找到了
         temp = remove(node.getRight(), key);
-        if (temp != null) {
-            if (temp.getLeft() != null) {
-                temp.setLeft(null);
-            } else {
-                temp.setRight(null);
-            }
-        }
         return temp;
     }
 
