@@ -131,28 +131,31 @@ public class BinaryTree<T extends Comparable<T>> {
         }
     }
 
-    /**（6-1）1.1(补充，简单)
-     * @Param:  key 要删除结点的值
+    /**
+     * （6-1）1.1(补充，简单)
+     *
+     * @Param: key 要删除结点的值
      * @Return: BinaryNode<T> 需要删除的结点
      */
-    public BinaryNode<T> remove1(T key){
+    public BinaryNode<T> remove1(T key) {
         if (this.getRoot() == null) {
             throw new RuntimeException("该二叉树为空");
         }
-        if (this.getNode(key) == null){
+        if (this.getNode(key) == null) {
             throw new RuntimeException("该树中不含有该节点");
         }
         BinaryNode<T> parent = this.parent(this.getNode(key));
         BinaryNode<T> temp;
-        if (parent.getLeft().getData().equals(key)){
+        if (parent.getLeft().getData().equals(key)) {
             temp = parent.getLeft();
             parent.setLeft(null);
-        }else {
+        } else {
             temp = parent.getRight();
             parent.setRight(null);
         }
         return temp;
     }
+
     /**
      * （6-1）1.2
      * 查找并删除首个以与key相等元素为结点为根的子树
@@ -164,7 +167,7 @@ public class BinaryTree<T extends Comparable<T>> {
         if (this.getRoot() == null) {
             throw new RuntimeException("该二叉树为空");
         }
-        if (this.getNode(key) == null){
+        if (this.getNode(key) == null) {
             throw new RuntimeException("该树中不含有该节点");
         }
         return remove(this.getRoot(), key);
@@ -179,13 +182,13 @@ public class BinaryTree<T extends Comparable<T>> {
             return temp;
         }
 //        判断根节点的左子节点
-        if (node.getLeft()!=null && node.getLeft().getData().equals(key)) {
+        if (node.getLeft() != null && node.getLeft().getData().equals(key)) {
             temp = node.getLeft();
             node.setLeft(null);
             return temp;
         }
 //        判断根节点的右子节点
-        if (node.getRight()!=null && node.getRight().getData().equals(key)) {
+        if (node.getRight() != null && node.getRight().getData().equals(key)) {
             temp = node.getRight();
             node.setRight(null);
             return temp;
@@ -250,7 +253,7 @@ public class BinaryTree<T extends Comparable<T>> {
         if (this.getRoot() == null) {
             throw new RuntimeException("该二叉树为空");
         }
-        if (p == this.getRoot()){
+        if (p == this.getRoot()) {
             System.out.println("该节点为根节点，不存在父节点");
             return this.getRoot();
         }
