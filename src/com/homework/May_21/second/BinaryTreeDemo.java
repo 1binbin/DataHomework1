@@ -11,7 +11,7 @@ import com.homework.May_21.first.BinaryTree;
  */
 public class BinaryTreeDemo {
     /**
-     * （6-2）1验证二叉树的性质3
+     * （6-2）1验证二叉树的性质3 O(n)
      *
      * @Param: BinaryTree<T> bitree 二叉树
      * @Return:
@@ -47,7 +47,7 @@ public class BinaryTreeDemo {
     }
 
     /**
-     * （6-2）2交换结点的左右子树，使用前序遍历
+     * （6-2）2交换结点的左右子树，使用前序遍历 O(n)
      *
      * @Param: BinaryTree<T> bitree 二叉树
      * @Return:
@@ -73,7 +73,7 @@ public class BinaryTreeDemo {
     }
 
     /**
-     * （6-2）2交换结点的左右子树，使用中序遍历
+     * （6-2）2交换结点的左右子树，使用中序遍历 O(n)
      * 由于左子树交换后，经过根节点时，再交换一遍，原来的左变为右，原来的右子树变为左子树，而新的左子树没有进行交换过
      * 也就是左边的交换完之后换到右边时，又被交换一遍
      *
@@ -101,7 +101,7 @@ public class BinaryTreeDemo {
     }
 
     /**
-     * （6-2）2交换结点的左右子树，使用后序遍历
+     * （6-2）2交换结点的左右子树，使用后序遍历 O(n)
      *
      * @Param: BinaryTree<T> bitree 二叉树
      * @Return:

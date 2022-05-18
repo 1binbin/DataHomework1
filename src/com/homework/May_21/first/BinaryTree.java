@@ -11,6 +11,7 @@ import java.util.Stack;
  * @Author hongxiaobin
  * @Time 2022/5/15-14:58
  */
+@SuppressWarnings("SingleStatementInBlock")
 public class BinaryTree<T extends Comparable<T>> {
     /**
      * 根节点
@@ -132,7 +133,7 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
-     * （6-1）1.1(补充，简单)
+     * （6-1）1.1(补充，简单) O(n)
      *
      * @Param: key 要删除结点的值
      * @Return: BinaryNode<T> 需要删除的结点
@@ -157,7 +158,7 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
-     * （6-1）1.2
+     * （6-1）1.2 O(n)
      * 查找并删除首个以与key相等元素为结点为根的子树
      *
      * @Param: T key 要删除结点的值
@@ -208,7 +209,7 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
-     * （6-1）2
+     * （6-1）2 O(n)
      * 判断是否为二叉排序树
      *
      * @Param:
@@ -243,7 +244,7 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
-     * （6-1）3
+     * （6-1）3 O(n)
      * 返回某结点的父母结点
      *
      * @Param: BinaryNode<T> p 需要找到其父母结点的子节点
@@ -269,10 +270,10 @@ public class BinaryTree<T extends Comparable<T>> {
             return left;
         }
         BinaryNode<T> right = parent(root.getRight(), p);
-        if (right != null) {
-            return right;
+        if (right == null) {
+            return null;
         }
-        return null;
+        return right;
     }
 
     /**
