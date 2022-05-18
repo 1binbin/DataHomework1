@@ -14,8 +14,8 @@ public class BinaryTreeTest {
 //        根据先序和中序构造二叉树
         SeqList<String> preList = new SeqList<>();
         SeqList<String> inList = new SeqList<>();
-        String preStr = "abdefgce";
-        String inStr = "dbfegaec";
+        String preStr = "abdefgc";
+        String inStr = "dbfegac";
         extracted(preList, preStr);
         extracted(inList, inStr);
         BinaryTree<String> stringBinaryTree =new BinaryTree<>(preList,inList);
@@ -45,8 +45,8 @@ public class BinaryTreeTest {
         BinaryNode<String> g = stringBinaryTree.getNode("g");
         System.out.println(stringBinaryTree.parent(g));
 //        删除某个结点为根节点的子树
-        System.out.println("删除以值为 e 结点为根节点的子树");
-        System.out.println(stringBinaryTree.remove("e"));
+        System.out.println("删除以值为 g 结点为根节点的子树");
+        System.out.println(stringBinaryTree.remove("g"));
         stringBinaryTree.preOrder(stringBinaryTree.getRoot());
         System.out.println();
         System.out.println("删除以值为 b 结点为根结点的子树");
