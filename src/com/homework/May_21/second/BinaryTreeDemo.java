@@ -20,6 +20,8 @@ public class BinaryTreeDemo {
     private static int twoChildCount;
 
     public static <T extends Comparable<T>> void property3(BinaryTree<T> bitree) {
+        leafsCount = 0;
+        twoChildCount = 0;
         if (bitree.getRoot()==null){
             throw new RuntimeException("该二叉树为空");
         }
