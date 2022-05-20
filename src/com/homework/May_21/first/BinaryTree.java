@@ -229,10 +229,22 @@ public class BinaryTree<T extends Comparable<T>> {
             return true;
         }
         if (root.getLeft() != null) {
-            s = root.getLeft().getData().compareTo(root.getData()) < 0;
+            if (root.getLeft().getData().compareTo(root.getData())>0){
+                s = false;
+                return false;
+            }else {
+                s = true;
+            }
+//            s = root.getLeft().getData().compareTo(root.getData()) < 0;
         }
         if (root.getRight() != null) {
-            s = root.getRight().getData().compareTo(root.getData()) > 0;
+            if (root.getRight().getData().compareTo(root.getData())<0){
+                s = false;
+                return false;
+            }else {
+                s = true;
+            }
+//            s = root.getRight().getData().compareTo(root.getData()) > 0;
         }
         isSorted(root.getLeft());
         isSorted(root.getRight());

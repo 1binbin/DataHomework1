@@ -11,7 +11,7 @@ import com.homework.May_21.first.BinaryTree;
  */
 public class BinaryTreeDemoTest {
     public static void main(String[] args) {
-//        创建一棵二叉树
+    //        创建一棵二叉树
         SeqList<String> preList = new SeqList<>();
         SeqList<String> inList1 = new SeqList<>();
         SeqList<String> inList2 = new SeqList<>();
@@ -27,14 +27,14 @@ public class BinaryTreeDemoTest {
         BinaryTree<String> stringBinaryTree1 = new BinaryTree<>(preList, inList1);
         BinaryTree<String> stringBinaryTree2 = new BinaryTree<>(preList, inList2);
         BinaryTree<String> stringBinaryTree3 = new BinaryTree<>(preList, inList3);
-//        验证性质3
+    //        验证性质3
         System.out.println("验证二叉树性质3");
         BinaryTreeDemo.property3(stringBinaryTree1);
-//        交换前遍历
+    //        交换前遍历
         System.out.println("交换左右子树前的后序遍历");
         stringBinaryTree1.postOrder(stringBinaryTree1.getRoot());
         System.out.println();
-//        交换后遍历
+    //        交换后遍历
         System.out.println("交换左右子树后的后序遍历------使用前序遍历实现");
         BinaryTreeDemo.swapPre(stringBinaryTree1);
         stringBinaryTree1.postOrder(stringBinaryTree1.getRoot());
