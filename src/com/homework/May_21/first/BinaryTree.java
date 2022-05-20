@@ -13,6 +13,8 @@ import java.util.Stack;
  */
 @SuppressWarnings("SingleStatementInBlock")
 public class BinaryTree<T extends Comparable<T>> {
+    private static boolean s;
+    Stack<BinaryNode<T>> stack = new Stack<>();
     /**
      * 根节点
      */
@@ -23,7 +25,6 @@ public class BinaryTree<T extends Comparable<T>> {
         this.root = null;
         leafs = 0;
     }
-
 
     public BinaryTree(SeqList<T> preList, SeqList<T> inList) {
         this.root = buildBitree(preList, 0, preList.size() - 1, inList, 0, inList.size() - 1);
@@ -75,8 +76,6 @@ public class BinaryTree<T extends Comparable<T>> {
         }
         return 0;
     }
-
-    Stack<BinaryNode<T>> stack = new Stack<>();
 
     private boolean printPath(BinaryNode<T> root, BinaryNode<T> node) {
         if (root == null) {
@@ -222,26 +221,20 @@ public class BinaryTree<T extends Comparable<T>> {
         return isSorted(this.getRoot());
     }
 
-    private static boolean s;
-
     public boolean isSorted(BinaryNode<T> root) {
         if (root == null) {
             return true;
         }
         if (root.getLeft() != null) {
-            if (root.getLeft().getData().compareTo(root.getData())>0){
-                s = false;
+            s = root.getLeft().getData().compareTo(root.getData()) < 0;
+            if (!s) {
                 return false;
-            }else {
-                s = true;
             }
         }
         if (root.getRight() != null) {
-            if (root.getRight().getData().compareTo(root.getData())<0){
-                s = false;
+            s = root.getRight().getData().compareTo(root.getData()) > 0;
+            if (!s) {
                 return false;
-            }else {
-                s = true;
             }
         }
         isSorted(root.getLeft());
