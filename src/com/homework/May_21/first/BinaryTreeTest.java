@@ -14,8 +14,8 @@ public class BinaryTreeTest {
 //        根据先序和中序构造二叉树
         SeqList<String> preList = new SeqList<>();
         SeqList<String> inList = new SeqList<>();
-        String preStr = "abdefgc";
-        String inStr = "dbfegac";
+        String preStr = "ABCDEFGHIJKL";
+        String inStr = "CBEDFGAJIHKL";
         extracted(preList, preStr);
         extracted(inList, inStr);
         BinaryTree<String> stringBinaryTree =new BinaryTree<>(preList,inList);
